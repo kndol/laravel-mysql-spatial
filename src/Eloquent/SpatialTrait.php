@@ -1,17 +1,18 @@
 <?php
 
-namespace Grimzy\LaravelMysqlSpatial\Eloquent;
+namespace Kndol\LaravelMysqlSpatial\Eloquent;
 
-use Grimzy\LaravelMysqlSpatial\Exceptions\SpatialFieldsNotDefinedException;
-use Grimzy\LaravelMysqlSpatial\Exceptions\UnknownSpatialFunctionException;
-use Grimzy\LaravelMysqlSpatial\Exceptions\UnknownSpatialRelationFunction;
-use Grimzy\LaravelMysqlSpatial\Types\Geometry;
-use Grimzy\LaravelMysqlSpatial\Types\GeometryInterface;
+use Kndol\LaravelMysqlSpatial\Exceptions\SpatialFieldsNotDefinedException;
+use Kndol\LaravelMysqlSpatial\Exceptions\UnknownSpatialFunctionException;
+use Kndol\LaravelMysqlSpatial\Exceptions\UnknownSpatialRelationFunction;
+use Kndol\LaravelMysqlSpatial\Types\Geometry;
+use Kndol\LaravelMysqlSpatial\Types\GeometryInterface;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 
 /**
  * Trait SpatialTrait.
  *
+ * @method static eachDistance($geometryColumn, $distanceColumn, $geometry)
  * @method static distance($geometryColumn, $geometry, $distance)
  * @method static distanceExcludingSelf($geometryColumn, $geometry, $distance)
  * @method static distanceSphere($geometryColumn, $geometry, $distance)
@@ -63,7 +64,7 @@ trait SpatialTrait
      *
      * @param \Illuminate\Database\Query\Builder $query
      *
-     * @return \Grimzy\LaravelMysqlSpatial\Eloquent\Builder
+     * @return \Kndol\LaravelMysqlSpatial\Eloquent\Builder
      */
     public function newEloquentBuilder($query)
     {
@@ -128,11 +129,21 @@ trait SpatialTrait
         return true;
     }
 
+    public function scopeEachDistance($query, $geometryColumn, $distanceColumn, $geometry)
+    {
+        $this->isColumnAllowed($geometryColumn);
+
+        $query->whereRaw("st_distance(`$geometryColumn`, ST_GeomFromText(?))*100000 <= `$distanceColumn`",
+            $geometry->toWkt());
+
+        return $query;
+    }
+
     public function scopeDistance($query, $geometryColumn, $geometry, $distance)
     {
         $this->isColumnAllowed($geometryColumn);
 
-        $query->whereRaw("st_distance(`$geometryColumn`, ST_GeomFromText(?)) <= ?", [
+        $query->whereRaw("st_distance(`$geometryColumn`, ST_GeomFromText(?))*100000 <= ?", [
             $geometry->toWkt(),
             $distance,
         ]);
@@ -146,7 +157,7 @@ trait SpatialTrait
 
         $query = $this->scopeDistance($query, $geometryColumn, $geometry, $distance);
 
-        $query->whereRaw("st_distance(`$geometryColumn`, ST_GeomFromText(?)) != 0", [
+        $query->whereRaw("st_distance(`$geometryColumn`, ST_GeomFromText(?))*100000 != 0", [
             $geometry->toWkt(),
         ]);
 
@@ -163,7 +174,7 @@ trait SpatialTrait
             $query->select('*');
         }
 
-        $query->selectRaw("st_distance(`$geometryColumn`, ST_GeomFromText(?)) as distance", [
+        $query->selectRaw("st_distance(`$geometryColumn`, ST_GeomFromText(?)*100000) as distance", [
             $geometry->toWkt(),
         ]);
     }

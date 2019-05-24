@@ -1,10 +1,10 @@
 <?php
 
-namespace Grimzy\LaravelMysqlSpatial\Types;
+namespace Kndol\LaravelMysqlSpatial\Types;
 
 use GeoJson\GeoJson;
 use GeoJson\Geometry\MultiLineString as GeoJsonMultiLineString;
-use Grimzy\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException;
+use Kndol\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException;
 use InvalidArgumentException;
 
 class MultiLineString extends GeometryCollection

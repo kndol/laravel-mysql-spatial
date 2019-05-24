@@ -1,6 +1,6 @@
 <?php
 
-use Grimzy\LaravelMysqlSpatial\Eloquent\SpatialTrait;
+use Kndol\LaravelMysqlSpatial\Eloquent\SpatialTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class GeometryModel extends Model

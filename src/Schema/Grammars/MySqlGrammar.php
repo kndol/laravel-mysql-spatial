@@ -1,8 +1,8 @@
 <?php
 
-namespace Grimzy\LaravelMysqlSpatial\Schema\Grammars;
+namespace Kndol\LaravelMysqlSpatial\Schema\Grammars;
 
-use Grimzy\LaravelMysqlSpatial\Schema\Blueprint;
+use Kndol\LaravelMysqlSpatial\Schema\Blueprint;
 use Illuminate\Database\Schema\Grammars\MySqlGrammar as IlluminateMySqlGrammar;
 use Illuminate\Support\Fluent;
 
@@ -107,7 +107,7 @@ class MySqlGrammar extends IlluminateMySqlGrammar
     /**
      * Compile a spatial index key command.
      *
-     * @param \Grimzy\LaravelMysqlSpatial\Schema\Blueprint $blueprint
+     * @param \Kndol\LaravelMysqlSpatial\Schema\Blueprint $blueprint
      * @param \Illuminate\Support\Fluent                   $command
      *
      * @return string

@@ -1,6 +1,6 @@
 <?php
 
-namespace Grimzy\LaravelMysqlSpatial\Types;
+namespace Kndol\LaravelMysqlSpatial\Types;
 
 use ArrayAccess;
 use InvalidArgumentException;
@@ -44,7 +44,7 @@ abstract class PointCollection extends GeometryCollection
     }
 
     /**
-     * @return array|\Grimzy\LaravelMysqlSpatial\Types\Point[]
+     * @return array|\Kndol\LaravelMysqlSpatial\Types\Point[]
      */
     public function getPoints()
     {
@@ -52,7 +52,7 @@ abstract class PointCollection extends GeometryCollection
     }
 
     /**
-     * @param \Grimzy\LaravelMysqlSpatial\Types\Point $point
+     * @param \Kndol\LaravelMysqlSpatial\Types\Point $point
      *
      * @deprecated 2.1.0 Use array_unshift($multipoint, $point); instead
      * @see array_unshift
@@ -64,7 +64,7 @@ abstract class PointCollection extends GeometryCollection
     }
 
     /**
-     * @param \Grimzy\LaravelMysqlSpatial\Types\Point $point
+     * @param \Kndol\LaravelMysqlSpatial\Types\Point $point
      *
      * @deprecated 2.1.0 Use $multipoint[] = $point; instead
      * @see ArrayAccess
@@ -76,7 +76,7 @@ abstract class PointCollection extends GeometryCollection
 
     /**
      * @param $index
-     * @param \Grimzy\LaravelMysqlSpatial\Types\Point $point
+     * @param \Kndol\LaravelMysqlSpatial\Types\Point $point
      *
      * @deprecated 2.1.0 Use array_splice($multipoint, $index, 0, [$point]); instead
      * @see array_splice

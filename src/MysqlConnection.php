@@ -1,10 +1,10 @@
 <?php
 
-namespace Grimzy\LaravelMysqlSpatial;
+namespace Kndol\LaravelMysqlSpatial;
 
 use Doctrine\DBAL\Types\Type as DoctrineType;
-use Grimzy\LaravelMysqlSpatial\Schema\Builder;
-use Grimzy\LaravelMysqlSpatial\Schema\Grammars\MySqlGrammar;
+use Kndol\LaravelMysqlSpatial\Schema\Builder;
+use Kndol\LaravelMysqlSpatial\Schema\Grammars\MySqlGrammar;
 use Illuminate\Database\MySqlConnection as IlluminateMySqlConnection;
 
 class MysqlConnection extends IlluminateMySqlConnection

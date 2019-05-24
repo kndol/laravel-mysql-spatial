@@ -3,13 +3,13 @@
 namespace Eloquent;
 
 use BaseTestCase;
-use Grimzy\LaravelMysqlSpatial\Eloquent\Builder;
-use Grimzy\LaravelMysqlSpatial\Eloquent\SpatialExpression;
-use Grimzy\LaravelMysqlSpatial\Eloquent\SpatialTrait;
-use Grimzy\LaravelMysqlSpatial\MysqlConnection;
-use Grimzy\LaravelMysqlSpatial\Types\LineString;
-use Grimzy\LaravelMysqlSpatial\Types\Point;
-use Grimzy\LaravelMysqlSpatial\Types\Polygon;
+use Kndol\LaravelMysqlSpatial\Eloquent\Builder;
+use Kndol\LaravelMysqlSpatial\Eloquent\SpatialExpression;
+use Kndol\LaravelMysqlSpatial\Eloquent\SpatialTrait;
+use Kndol\LaravelMysqlSpatial\MysqlConnection;
+use Kndol\LaravelMysqlSpatial\Types\LineString;
+use Kndol\LaravelMysqlSpatial\Types\Point;
+use Kndol\LaravelMysqlSpatial\Types\Polygon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\Query\Grammars\MySqlGrammar;

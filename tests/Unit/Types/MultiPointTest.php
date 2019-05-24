@@ -1,7 +1,7 @@
 <?php
 
-use Grimzy\LaravelMysqlSpatial\Types\MultiPoint;
-use Grimzy\LaravelMysqlSpatial\Types\Point;
+use Kndol\LaravelMysqlSpatial\Types\MultiPoint;
+use Kndol\LaravelMysqlSpatial\Types\Point;
 
 class MultiPointTest extends BaseTestCase
 {
@@ -42,7 +42,7 @@ class MultiPointTest extends BaseTestCase
 
     public function testInvalidGeoJsonException()
     {
-        $this->setExpectedException(\Grimzy\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class);
+        $this->setExpectedException(\Kndol\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class);
         MultiPoint::fromJson('{"type":"Point","coordinates":[3.4,1.2]}');
     }
 

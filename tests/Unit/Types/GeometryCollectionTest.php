@@ -1,10 +1,10 @@
 <?php
 
-use Grimzy\LaravelMysqlSpatial\Types\GeometryCollection;
-use Grimzy\LaravelMysqlSpatial\Types\GeometryInterface;
-use Grimzy\LaravelMysqlSpatial\Types\LineString;
-use Grimzy\LaravelMysqlSpatial\Types\Point;
-use Grimzy\LaravelMysqlSpatial\Types\Polygon;
+use Kndol\LaravelMysqlSpatial\Types\GeometryCollection;
+use Kndol\LaravelMysqlSpatial\Types\GeometryInterface;
+use Kndol\LaravelMysqlSpatial\Types\LineString;
+use Kndol\LaravelMysqlSpatial\Types\Point;
+use Kndol\LaravelMysqlSpatial\Types\Polygon;
 
 class GeometryCollectionTest extends BaseTestCase
 {
@@ -101,7 +101,7 @@ class GeometryCollectionTest extends BaseTestCase
 
     public function testInvalidGeoJsonException()
     {
-        $this->setExpectedException(\Grimzy\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class);
+        $this->setExpectedException(\Kndol\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class);
         GeometryCollection::fromJson('{"type":"Point","coordinates":[3.4,1.2]}');
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Grimzy\LaravelMysqlSpatial\Exceptions;
+namespace Kndol\LaravelMysqlSpatial\Exceptions;
 
 class UnknownSpatialRelationFunction extends \RuntimeException
 {

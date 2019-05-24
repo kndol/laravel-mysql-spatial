@@ -1,8 +1,8 @@
 <?php
 
-use Grimzy\LaravelMysqlSpatial\Types\LineString;
-use Grimzy\LaravelMysqlSpatial\Types\MultiLineString;
-use Grimzy\LaravelMysqlSpatial\Types\Point;
+use Kndol\LaravelMysqlSpatial\Types\LineString;
+use Kndol\LaravelMysqlSpatial\Types\MultiLineString;
+use Kndol\LaravelMysqlSpatial\Types\Point;
 
 class MultiLineStringTest extends BaseTestCase
 {
@@ -45,7 +45,7 @@ class MultiLineStringTest extends BaseTestCase
 
     public function testInvalidGeoJsonException()
     {
-        $this->setExpectedException(\Grimzy\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class);
+        $this->setExpectedException(\Kndol\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class);
         MultiLineString::fromJson('{"type":"Point","coordinates":[3.4,1.2]}');
     }
 

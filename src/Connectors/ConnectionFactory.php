@@ -1,8 +1,8 @@
 <?php
 
-namespace Grimzy\LaravelMysqlSpatial\Connectors;
+namespace Kndol\LaravelMysqlSpatial\Connectors;
 
-use Grimzy\LaravelMysqlSpatial\MysqlConnection;
+use Kndol\LaravelMysqlSpatial\MysqlConnection;
 use Illuminate\Database\Connectors\ConnectionFactory as IlluminateConnectionFactory;
 use PDO;
 

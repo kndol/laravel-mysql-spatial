@@ -1,9 +1,9 @@
 <?php
 
-use Grimzy\LaravelMysqlSpatial\Types\LineString;
-use Grimzy\LaravelMysqlSpatial\Types\MultiPolygon;
-use Grimzy\LaravelMysqlSpatial\Types\Point;
-use Grimzy\LaravelMysqlSpatial\Types\Polygon;
+use Kndol\LaravelMysqlSpatial\Types\LineString;
+use Kndol\LaravelMysqlSpatial\Types\MultiPolygon;
+use Kndol\LaravelMysqlSpatial\Types\Point;
+use Kndol\LaravelMysqlSpatial\Types\Polygon;
 
 class MultiPolygonTest extends BaseTestCase
 {
@@ -65,7 +65,7 @@ class MultiPolygonTest extends BaseTestCase
 
     public function testInvalidGeoJsonException()
     {
-        $this->setExpectedException(\Grimzy\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class);
+        $this->setExpectedException(\Kndol\LaravelMysqlSpatial\Exceptions\InvalidGeoJsonException::class);
         MultiPolygon::fromJson('{"type":"Point","coordinates":[3.4,1.2]}');
     }
 
