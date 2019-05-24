@@ -8,7 +8,7 @@ Please check the documentation for your MySQL version. MySQL's Extension for Spa
 
 **Versions**
 
-- ``2.1.4`: MySQL 5.7 and 8.0
+- `2.1.4`: MySQL 5.7 and 8.0
 
 This package also works with MariaDB. Please refer to the [MySQL/MariaDB Spatial Support Matrix](https://mariadb.com/kb/en/library/mysqlmariadb-spatial-support-matrix/) for compatibility.
 
