@@ -8,8 +8,7 @@ Please check the documentation for your MySQL version. MySQL's Extension for Spa
 
 **Versions**
 
-- `1.x.x`: MySQL 5.6 (also supports MySQL 5.5 but not all spatial analysis functions)
-- `2.x.x`: MySQL 5.7 and 8.0
+- ``2.1.4`: MySQL 5.7 and 8.0
 
 This package also works with MariaDB. Please refer to the [MySQL/MariaDB Spatial Support Matrix](https://mariadb.com/kb/en/library/mysqlmariadb-spatial-support-matrix/) for compatibility.
 
@@ -19,12 +18,6 @@ Add the package using composer:
 
 ```shell
 composer require kndol/laravel-mysql-spatial
-```
-
-For MySQL 5.6 and 5.5:
-
-```shell
-composer require kndol/laravel-mysql-spatial:^1.0
 ```
 
 For Laravel versions before 5.5 or if not using auto-discovery, register the service provider in `config/app.php`:
@@ -261,6 +254,7 @@ Spatial analysis functions are implemented using [Eloquent Local Scopes](https:/
 
 Available scopes:
 
+- `eachDistance($geometryColumn, $distanceColumn, $geometry)`
 - `distance($geometryColumn, $geometry, $distance)`
 - `distanceExcludingSelf($geometryColumn, $geometry, $distance)`
 - `distanceSphere($geometryColumn, $geometry, $distance)`
@@ -275,8 +269,8 @@ Available scopes:
 - `overlaps($geometryColumn, $geometry)`
 - `doesTouch($geometryColumn, $geometry)`
 - `orderBySpatial($geometryColumn, $geometry, $orderFunction, $direction = 'asc')`
-- `orderByDistance($geometryColumn, ​$geometry, ​$direction = 'asc')`
-- `orderByDistanceSphere($geometryColumn, ​$geometry, ​$direction = 'asc')`
+- `orderByDistance($geometryColumn, $geometry, $direction = 'asc')`
+- `orderByDistanceSphere($geometryColumn, $geometry, $direction = 'asc')`
 
 *Note that behavior and availability of MySQL spatial analysis functions differs in each MySQL version (cf. [documentation](https://dev.mysql.com/doc/refman/5.7/en/spatial-function-reference.html)).*
 
